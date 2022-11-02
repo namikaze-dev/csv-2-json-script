@@ -1,5 +1,6 @@
 import sys
 import csv
+import json
 
 from hashlib import sha256
 
@@ -14,13 +15,23 @@ ROWS = DATASET
 
 
 def main():
-    pass
-
+    HASHES = engine(JSON_DATASET)
+    print(HASHES)
+    
+    
+def engine(json_dataset):
+    hashes = []
+    for row in json_dataset:
+        with open(f'{valid_available_name(row)}.json', 'w') as json_file:
+            json.dump(json_transform(row), json_file, indent=4)
+        with open(f'{valid_available_name(row)}.json', 'rb') as json_file:
+            hashes.append(sha256(json_file.read()).hexdigest())
+    return hashes
 
 def json_transform(row):
     json_object = {
         "format": "CHIP-0007",
-        "name": row.get('name') or row.get('filename') or row.get('file_name') or row.get('nft_name') or "",
+        "name": valid_available_name(row) or "",
         "description": row.get('description') or "",
         "minting_tool": "Team x",
         "sensitive_content": False,
@@ -42,6 +53,9 @@ def json_transform(row):
         }
     }
     return json_object
+
+def valid_available_name(row):
+    return row.get('name') or row.get('filename') or row.get('file_name') or row.get('nft_name')
 
 
 if __name__ == '__main__':
