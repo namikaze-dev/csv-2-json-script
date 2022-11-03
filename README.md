@@ -22,7 +22,7 @@ The following csv columns are required:
 	<li>Gender</li>
 	<li>
 		Attributes
-		<div>&nbsp;&nbsp;&nbsp;&nbsp;format: "key: value, key-2: value-2, key-3: value-3"</div>
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;format: "key: value; key-2: value-2; key-3: value-3"</div>
 	</li>
 </ul>
 
