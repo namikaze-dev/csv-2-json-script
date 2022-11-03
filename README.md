@@ -16,8 +16,8 @@ Does not modify input csv file.
 An appropiate/valid csv file.
 The following csv columns are required:
 <ul>
+	<li>Team Names</li>
 	<li>Series Number</li>
-	<li>Team Name</li>
 	<li>File Name</li>
 	<li>NFT Name</li>
 	<li>Description</li>
@@ -26,7 +26,6 @@ The following csv columns are required:
 		Attributes
 		<div>&nbsp;&nbsp;&nbsp;&nbsp;format: "key: value; key-2: value-2; key-3: value-3"</div>
 	</li>
-	<li>UUID</li>
 </ul>
 
 ## Output
