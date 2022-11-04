@@ -54,9 +54,7 @@ def write_json_files(header, rows, output_dir_name=''):
             json_hash = sha256(json_file.read()).hexdigest() 
             output_rows.append(rows[i] + [json_hash])
     return output_header, output_rows
-    
-                        
-        
+                                    
         
 def jsonify(header, rows):
     json_rows, team_name  = [], rows[0]
@@ -68,7 +66,6 @@ def jsonify(header, rows):
         json_rows.append(transform(header, row))
     return json_rows
         
-
 
 def get_args():
     args = sys.argv
