@@ -1,8 +1,5 @@
 import sys
 
-from attr import attributes
-
-
 def transform(header, row):
     return {key: val for key, val in zip(header, row)}
 
